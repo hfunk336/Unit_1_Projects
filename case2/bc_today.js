@@ -1,4 +1,4 @@
-
+"use strict"
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
@@ -14,8 +14,15 @@
 
 */
 
+var thisDate = new Date();
+var dateString = thisDate.toLocaleDateString();
+var dateHTML = "<h2>" + dateString + "</h2>";
+var thisDay = thisDate.getDay();
+var eventHTML = getEvent(thisDay);
 
-
+document.getElementById("unionToday").insertAdjacentHTML('beforeend', dateHTML + eventHTML);
+// for the id element unionToday puts the dateHTML and the eventHTML vars before the end 
+// of the element 
 function getEvent(day) {
    var eventHTML;
    switch (day) {

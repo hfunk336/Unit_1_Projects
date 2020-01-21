@@ -10,16 +10,21 @@
 
 */
 
-var thisTime = new Date("February 3, 2018 3:15:28");
-var timeStr = toLocaleString(thisTime);
+var thisTime = new Date();
+var timeStr = thisTime.toLocaleString();
+// changes the date from thisTime to be a locale date string
 
-document.getElementById(timestamp).innerHTML = timeStr;
+document.getElementById("timeStamp").innerHTML = timeStr;
+// sets the text in the timeStamp id element to be the timeStr var
 
-var thisHour = getHours(thisTime);
-var thisMonth = getMonth(thisTime);
+var thisHour = thisTime.getHours();
+// gets the hours from thisTime
+var thisMonth = thisTime.getMonth();
+// gets the month from thisTime
 
 var mapNum = (2*thisMonth + thisHour) % 24;
 
-var imgStr = "<img src='sd_sky" + mapNum + ".png'/>";
+var imgStr = "<img src= 'sd_sky" + mapNum + ".png'/>";
+// uses the mapNum var to set which sd_sky.png it is
 
-document.getElementById(planisphere)
+document.getElementById("planisphere").insertAdjacentHTML('afterBegin', imgStr);
