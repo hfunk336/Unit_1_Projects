@@ -15,10 +15,14 @@
 */
 
 var thisDate = new Date();
+// stores today's date
 var dateString = thisDate.toLocaleDateString();
+// makes the date into local standard
 var dateHTML = "<h2>" + dateString + "</h2>";
 var thisDay = thisDate.getDay();
+// uses the date to find what day it is
 var eventHTML = getEvent(thisDay);
+// gets an event based on what day it is
 
 document.getElementById("unionToday").insertAdjacentHTML('beforeend', dateHTML + eventHTML);
 // for the id element unionToday puts the dateHTML and the eventHTML vars before the end 
